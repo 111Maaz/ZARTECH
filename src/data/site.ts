@@ -85,7 +85,7 @@ export const projects: Project[] = [
     accent: "var(--accent)",
     status: "delivered",
     media: {
-      image:fashionDigitalExperience,
+      image: fashionDigitalExperience,
     },
   },
   // {
@@ -193,6 +193,7 @@ export const workFilters = [
 export interface Capability {
   number: string;
   title: string;
+  image: string;
   items: string[];
   note: string;
   tech: string[];

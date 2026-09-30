@@ -99,25 +99,16 @@ export function Capabilities() {
                         </div>
                         <div className="flex flex-col justify-between gap-6">
                           <div className="relative aspect-[16/10] w-full overflow-hidden border border-line bg-surface">
-                            <div className="zt-grid-bg absolute inset-0 opacity-50" />
-                            <div className="absolute inset-0 grid grid-cols-6 grid-rows-4 gap-px p-4">
-                              {Array.from({ length: 8 }).map((_, i) => (
-                                <motion.span
-                                  key={i}
-                                  className="block"
-                                  style={{
-                                    gridColumn: `span ${1 + (i % 3)}`,
-                                    background:
-                                      i % 3 === 0
-                                        ? "color-mix(in oklab, var(--accent) 30%, transparent)"
-                                        : "var(--surface-2)",
-                                  }}
-                                  initial={reduce ? false : { scaleX: 0 }}
-                                  animate={{ scaleX: 1 }}
-                                  transition={{ duration: 0.6, delay: i * 0.05 }}
-                                />
-                              ))}
-                            </div>
+                            <motion.img
+                              src={c.image}
+                              alt={`${c.title} capability`}
+                              className="h-full w-full object-cover"
+                              loading="lazy"
+                              decoding="async"
+                              initial={reduce ? false : { opacity: 0, scale: 1.04 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                            />
                           </div>
                           <ul className="flex flex-wrap gap-2">
                             {c.tech.map((t) => (
