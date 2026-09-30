@@ -1,4 +1,4 @@
-import furnitureDigitalExperience from "../assets/furniture-digital-experience.WEBP";
+import furnitureDigitalExperience from "../assets/furniture-digital-experience.webp";
 import luxuryMenswearShowroom from "../assets/luxury-menswear-showroom.webp";
 import fashionDigitalExperience from "../assets/fashion-digital-experience.webp";
 import schoolManagementPlatform from "../assets/school_management_platform.webp";
