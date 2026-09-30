@@ -2,6 +2,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import { contact } from "@/data/site";
 import { symbolUrl } from "./brand";
 import { RevealLines } from "./Reveal";
+import { symbolUrl2 } from "./brand";
+
 
 export function FinalCTA() {
   const reduce = useReducedMotion();
@@ -52,20 +54,20 @@ export function FinalCTA() {
           </div>
           <div>
             <dt className="zt-eyebrow">Contact</dt>
-            <dd className="mt-2 font-mono text-sm">{contact.person}</dd>
+            <dd className="mt-2 font-mono text-sm">{contact.whatsapp}</dd>
           </div>
         </dl>
 
         {/* Finish with the official ZARtech symbol, presented without effects. */}
         <div className="relative mt-28 flex flex-col items-center">
           <motion.img
-            src={symbolUrl}
+            src={symbolUrl2}
             alt="ZARtech Solutions symbol"
             initial={reduce ? false : { opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="w-40 select-none sm:w-56"
+            className="w-50 select-none sm:w-66"
           />
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 16 }}
@@ -74,7 +76,7 @@ export function FinalCTA() {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="mt-10 font-display text-xl font-extrabold tracking-[-0.02em] uppercase sm:text-3xl"
           >
-            ZARtech Solutions
+            ZEAL · AUTOMATION · RESULTS
           </motion.p>
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 16 }}
@@ -83,7 +85,7 @@ export function FinalCTA() {
             transition={{ duration: 0.9, delay: 0.45 }}
             className="mt-4 text-sm text-muted-foreground"
           >
-            Let's build something that matters.
+            ZARtech Solutions
           </motion.p>
         </div>
       </div>

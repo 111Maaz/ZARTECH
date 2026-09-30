@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { navLinks } from "@/data/site";
-import { symbolUrl } from "./brand";
+import { symbolUrl2 } from "./brand";
 
 const sectionIds = ["work", "capabilities", "design", "about", "contact"];
 
@@ -55,12 +55,14 @@ export function Nav() {
             aria-label="ZARtech Solutions — home"
           >
             <img
-              src={symbolUrl}
-              alt=""
-              className="h-7 w-7 object-contain transition-transform duration-500 group-hover:-translate-y-0.5 sm:h-8 sm:w-8"
+              src={symbolUrl2}
+              alt="ZAR"
+              // className="h-7 w-7 object-contain transition-transform duration-500 group-hover:-translate-y-0.5 sm:h-8 sm:w-8"
+              className="h-12 w-12 object-contain transition-transform duration-500 group-hover:-translate-y-0.5 sm:h-16 sm:w-16" 
+
             />
             <span className="font-display text-sm font-extrabold tracking-[-0.02em] uppercase">
-              ZARtech<span className="text-accent">.</span>
+              TECH<span className="text-accent">.</span>
             </span>
           </a>
 
@@ -122,7 +124,7 @@ export function Nav() {
             <div className="zt-diagonal pointer-events-none absolute inset-0 opacity-40" />
             <div className="zt-shell relative flex items-center justify-between py-6">
               <span className="font-display text-sm font-extrabold tracking-[-0.02em] uppercase">
-                ZARtech<span className="text-accent">.</span>
+                TECH<span className="text-accent">.</span>
               </span>
               <button
                 type="button"

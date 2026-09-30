@@ -1,5 +1,6 @@
 import { contact, navLinks } from "@/data/site";
 import { symbolUrl } from "./brand";
+import { symbolUrl2 } from "./brand";
 
 export function Footer() {
   return (
@@ -7,9 +8,9 @@ export function Footer() {
       <div className="zt-shell grid gap-10 sm:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <img src={symbolUrl} alt="" className="h-8 w-8 object-contain" loading="lazy" />
+            <img src={symbolUrl2} alt="" className="h-12 w-12 object-contain" loading="lazy" />
             <span className="font-display text-sm font-extrabold tracking-[-0.02em] uppercase">
-              ZARtech<span className="text-accent">.</span>
+              TECH<span className="text-accent">.</span>
             </span>
           </div>
           <p className="mt-5 max-w-xs text-sm text-muted-foreground">

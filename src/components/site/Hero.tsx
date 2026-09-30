@@ -202,7 +202,7 @@ export function Hero() {
           style={{ opacity: contentOpacity }}
           className="zt-shell relative flex h-full flex-col justify-end pb-16 sm:pb-20 lg:justify-center lg:pb-0"
         >
-          <motion.p
+          {/* <motion.p
             className="zt-eyebrow mb-6 flex items-center gap-3"
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -210,7 +210,7 @@ export function Hero() {
           >
             <span className="inline-block h-px w-10 bg-accent" />
             ZARtech Solutions
-          </motion.p>
+          </motion.p> */}
 
           <h1 className="zt-display max-w-[16ch]" aria-label="We build what businesses need next.">
             {lines.map((line, i) => (

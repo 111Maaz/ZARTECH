@@ -1,3 +1,16 @@
+import furnitureDigitalExperience from "../assets/furniture-digital-experience.WEBP";
+import luxuryMenswearShowroom from "../assets/luxury-menswear-showroom.webp";
+import fashionDigitalExperience from "../assets/fashion-digital-experience.webp";
+import schoolManagementPlatform from "../assets/school_management_platform.webp";
+
+import digitalExperiences from "../assets/digital_exp.webp";
+import commerce from "../assets/Commerce.webp";
+import businessSystems from "../assets/Business_Systems.webp";
+import automation from "../assets/Automation.webp";
+import aiIntelligentSystems from "../assets/ai_intelligent_systems.webp";
+import productEngineering from "../assets/Product_Engineering.webp";
+import cloudInfrastructure from "../assets/Cloud_and_Infrastructure.webp";
+
 export type ProjectStatus = "delivered" | "ongoing";
 
 export interface Project {
@@ -36,7 +49,10 @@ export const projects: Project[] = [
     categories: ["digital", "commerce"],
     accent: "var(--accent)",
     status: "delivered",
-    media: {},
+    media: {
+      image: furnitureDigitalExperience,
+      alt: "Premium furniture digital experience showcase",
+    },
   },
   {
     id: "luxury-menswear-showroom",
@@ -51,7 +67,9 @@ export const projects: Project[] = [
     categories: ["digital", "commerce"],
     accent: "var(--accent)",
     status: "delivered",
-    media: {},
+    media: {
+      image: luxuryMenswearShowroom,
+    },
   },
   {
     id: "fashion-digital-experience",
@@ -66,56 +84,58 @@ export const projects: Project[] = [
     categories: ["digital", "commerce"],
     accent: "var(--accent)",
     status: "delivered",
-    media: {},
+    media: {
+      image:fashionDigitalExperience,
+    },
   },
-  {
-    id: "modest-fashion-catalogue",
-    number: "04",
-    industry: "Modest Fashion",
-    title: "Digital Catalogue",
-    discipline: "Digital Catalogue",
-    meta: "Fashion · Digital Catalogue",
-    description:
-      "A structured digital catalogue experience designed to make product discovery more visual, accessible and engaging.",
-    capabilities: ["Digital Catalogue", "Product Presentation", "Responsive Design"],
-    categories: ["digital", "commerce"],
-    accent: "var(--accent)",
-    status: "delivered",
-    media: {},
-  },
-  {
-    id: "bridal-digital-showroom",
-    number: "05",
-    industry: "Bridal",
-    title: "Digital Showroom",
-    discipline: "Digital Experience",
-    meta: "Bridal · Digital Experience",
-    description:
-      "A luxury-oriented digital experience focused on visual storytelling, collection presentation and premium brand perception.",
-    capabilities: ["Luxury Experience", "Digital Showroom", "Visual Storytelling"],
-    categories: ["digital"],
-    accent: "var(--accent)",
-    status: "delivered",
-    media: {},
-  },
-  {
-    id: "furniture-product-experience",
-    number: "06",
-    industry: "Furniture",
-    title: "Product Experience",
-    discipline: "Product Experience",
-    meta: "Furniture · Digital Experience",
-    description:
-      "A product-focused digital experience designed to present furniture collections through a structured and modern interface.",
-    capabilities: ["Product Experience", "Furniture", "Digital Presence"],
-    categories: ["digital", "products"],
-    accent: "var(--accent)",
-    status: "delivered",
-    media: {},
-  },
+  // {
+  //   id: "modest-fashion-catalogue",
+  //   number: "04",
+  //   industry: "Modest Fashion",
+  //   title: "Digital Catalogue",
+  //   discipline: "Digital Catalogue",
+  //   meta: "Fashion · Digital Catalogue",
+  //   description:
+  //     "A structured digital catalogue experience designed to make product discovery more visual, accessible and engaging.",
+  //   capabilities: ["Digital Catalogue", "Product Presentation", "Responsive Design"],
+  //   categories: ["digital", "commerce"],
+  //   accent: "var(--accent)",
+  //   status: "delivered",
+  //   media: {},
+  // },
+  // {
+  //   id: "bridal-digital-showroom",
+  //   number: "05",
+  //   industry: "Bridal",
+  //   title: "Digital Showroom",
+  //   discipline: "Digital Experience",
+  //   meta: "Bridal · Digital Experience",
+  //   description:
+  //     "A luxury-oriented digital experience focused on visual storytelling, collection presentation and premium brand perception.",
+  //   capabilities: ["Luxury Experience", "Digital Showroom", "Visual Storytelling"],
+  //   categories: ["digital"],
+  //   accent: "var(--accent)",
+  //   status: "delivered",
+  //   media: {},
+  // },
+  // {
+  //   id: "furniture-product-experience",
+  //   number: "06",
+  //   industry: "Furniture",
+  //   title: "Product Experience",
+  //   discipline: "Product Experience",
+  //   meta: "Furniture · Digital Experience",
+  //   description:
+  //     "A product-focused digital experience designed to present furniture collections through a structured and modern interface.",
+  //   capabilities: ["Product Experience", "Furniture", "Digital Presence"],
+  //   categories: ["digital", "products"],
+  //   accent: "var(--accent)",
+  //   status: "delivered",
+  //   media: {},
+  // },
   {
     id: "school-management-platform",
-    number: "07",
+    number: "04",
     industry: "Enterprise",
     title: "Multi-Role Management Platform",
     discipline: "ERP · Business Systems",
@@ -134,28 +154,30 @@ export const projects: Project[] = [
     categories: ["systems", "erp", "automation"],
     accent: "var(--accent)",
     status: "delivered",
-    media: {},
+    media: {
+      image: schoolManagementPlatform,
+    },
   },
-  {
-    id: "startup-product-platform",
-    number: "08",
-    industry: "Startup",
-    title: "Product Platform",
-    discipline: "Product Engineering",
-    meta: "Product Engineering · Platform Architecture",
-    description:
-      "Contributed to the design and engineering of a digital product for an early-stage venture, helping transform product requirements into a working platform.",
-    capabilities: [
-      "Product Engineering",
-      "Application Development",
-      "Interface Design",
-      "Platform Architecture",
-    ],
-    categories: ["products", "systems"],
-    accent: "var(--accent)",
-    status: "ongoing",
-    media: {},
-  },
+  // {
+  //   id: "startup-product-platform",
+  //   number: "08",
+  //   industry: "Startup",
+  //   title: "Product Platform",
+  //   discipline: "Product Engineering",
+  //   meta: "Product Engineering · Platform Architecture",
+  //   description:
+  //     "Contributed to the design and engineering of a digital product for an early-stage venture, helping transform product requirements into a working platform.",
+  //   capabilities: [
+  //     "Product Engineering",
+  //     "Application Development",
+  //     "Interface Design",
+  //     "Platform Architecture",
+  //   ],
+  //   categories: ["products", "systems"],
+  //   accent: "var(--accent)",
+  //   status: "ongoing",
+  //   media: {},
+  // },
 ];
 
 export const workFilters = [
@@ -180,6 +202,7 @@ export const capabilities: Capability[] = [
   {
     number: "01",
     title: "Digital Experiences",
+    image: digitalExperiences,
     items: [
       "Websites",
       "Corporate Platforms",
@@ -196,6 +219,7 @@ export const capabilities: Capability[] = [
   {
     number: "02",
     title: "Commerce",
+    image: commerce,
     items: [
       "E-commerce",
       "Online Ordering",
@@ -209,6 +233,7 @@ export const capabilities: Capability[] = [
   {
     number: "03",
     title: "Business Systems",
+    image: businessSystems,
     items: [
       "ERP Platforms",
       "Admin Dashboards",
@@ -234,6 +259,7 @@ export const capabilities: Capability[] = [
   {
     number: "04",
     title: "Automation",
+    image: automation,
     items: [
       "Workflow Automation",
       "Lead Systems",
@@ -248,6 +274,7 @@ export const capabilities: Capability[] = [
   {
     number: "05",
     title: "AI & Intelligent Systems",
+    image: aiIntelligentSystems,
     items: [
       "AI Integrations",
       "AI-powered Workflows",
@@ -260,6 +287,7 @@ export const capabilities: Capability[] = [
   {
     number: "06",
     title: "Product Engineering",
+    image: productEngineering,
     items: [
       "MVPs",
       "Startup Platforms",
@@ -274,6 +302,7 @@ export const capabilities: Capability[] = [
   {
     number: "07",
     title: "Cloud & Infrastructure",
+    image: cloudInfrastructure,
     items: [
       "Cloud Deployment",
       "Databases",
