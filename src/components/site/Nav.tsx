@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { navLinks } from "@/data/site";
 import { symbolUrl } from "./brand";
 
-const sectionIds = ["work", "capabilities", "systems", "about", "contact"];
+const sectionIds = ["work", "capabilities", "design", "about", "contact"];
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,9 +45,7 @@ export function Nav() {
     <>
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-[background-color,padding,backdrop-filter] duration-500 ${
-          scrolled
-            ? "bg-background/70 py-3 backdrop-blur-xl"
-            : "py-6"
+          scrolled ? "bg-background/70 py-3 backdrop-blur-xl" : "py-6"
         }`}
       >
         <nav className="zt-shell flex items-center justify-between gap-6" aria-label="Primary">
@@ -74,7 +72,9 @@ export function Nav() {
                   <a
                     href={l.href}
                     className="zt-link-underline font-mono text-[11px] tracking-[0.22em] uppercase transition-colors duration-300"
-                    style={{ color: active === id ? "var(--foreground)" : "var(--muted-foreground)" }}
+                    style={{
+                      color: active === id ? "var(--foreground)" : "var(--muted-foreground)",
+                    }}
                   >
                     {l.label}
                   </a>

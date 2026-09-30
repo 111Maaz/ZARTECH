@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { projects, workFilters } from "@/data/site";
-import { ProjectVisual } from "./ProjectVisual";
+import { productTypes, projects, workFilters } from "@/data/site";
+import { ProjectMedia } from "./ProjectMedia";
 import { Reveal, RevealLines } from "./Reveal";
 
 export function Work() {
@@ -35,7 +35,11 @@ export function Work() {
           </Reveal>
         </div>
 
-        <div className="mt-14 flex flex-wrap gap-x-6 gap-y-3" role="tablist" aria-label="Work categories">
+        <div
+          className="mt-14 flex flex-wrap gap-x-6 gap-y-3"
+          role="tablist"
+          aria-label="Work categories"
+        >
           {workFilters.map((f) => {
             const activeFilter = filter === f.id;
             return (
@@ -136,7 +140,11 @@ export function Work() {
                             animate={{ clipPath: "inset(0 0 0% 0)" }}
                             transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                           >
-                            <ProjectVisual project={p} />
+                            <ProjectMedia
+                              projectId={p.id}
+                              title={`${p.industry} ${p.title}`}
+                              {...p.media}
+                            />
                           </motion.div>
                           <div className="flex flex-col justify-between gap-8">
                             <motion.p
@@ -177,6 +185,42 @@ export function Work() {
                 </motion.li>
               );
             })}
+            {(filter === "all" || filter === "products") && (
+              <motion.li
+                key="product-formats"
+                layout
+                initial={reduce ? false : { opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="border-b border-line py-10 sm:py-12"
+              >
+                <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
+                  <div>
+                    <p className="zt-eyebrow">Product formats</p>
+                    <h3 className="mt-4 font-display text-3xl leading-none font-extrabold tracking-[-0.03em] uppercase sm:text-4xl">
+                      We build products too.
+                    </h3>
+                    <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
+                      Product work that is part of our practice but is not presented as a dedicated
+                      case study.
+                    </p>
+                  </div>
+                  <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    {productTypes.map((product, index) => (
+                      <li
+                        key={product}
+                        className="flex min-h-20 items-center justify-between gap-4 border border-line bg-surface/40 px-5 py-4"
+                      >
+                        <span className="text-sm">{product}</span>
+                        <span className="font-mono text-[10px] tracking-[0.16em] text-accent uppercase">
+                          Product · {String(index + 1).padStart(2, "0")}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.li>
+            )}
           </AnimatePresence>
         </ul>
       </div>

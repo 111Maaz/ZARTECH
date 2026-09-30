@@ -12,7 +12,13 @@ export interface Project {
   categories: string[];
   accent: string;
   status: ProjectStatus;
-  visual: "furniture" | "menswear" | "fashion" | "modest" | "bridal" | "product" | "erp";
+  /** Add an image or muted looping video when approved project media is available. */
+  media: {
+    image?: string;
+    videoLoop?: string;
+    alt?: string;
+    poster?: string;
+  };
 }
 
 /* Public portfolio. Client identities are intentionally not represented. */
@@ -30,7 +36,7 @@ export const projects: Project[] = [
     categories: ["digital", "commerce"],
     accent: "var(--accent)",
     status: "delivered",
-    visual: "furniture",
+    media: {},
   },
   {
     id: "luxury-menswear-showroom",
@@ -45,7 +51,7 @@ export const projects: Project[] = [
     categories: ["digital", "commerce"],
     accent: "var(--accent)",
     status: "delivered",
-    visual: "menswear",
+    media: {},
   },
   {
     id: "fashion-digital-experience",
@@ -60,7 +66,7 @@ export const projects: Project[] = [
     categories: ["digital", "commerce"],
     accent: "var(--accent)",
     status: "delivered",
-    visual: "fashion",
+    media: {},
   },
   {
     id: "modest-fashion-catalogue",
@@ -75,7 +81,7 @@ export const projects: Project[] = [
     categories: ["digital", "commerce"],
     accent: "var(--accent)",
     status: "delivered",
-    visual: "modest",
+    media: {},
   },
   {
     id: "bridal-digital-showroom",
@@ -90,7 +96,7 @@ export const projects: Project[] = [
     categories: ["digital"],
     accent: "var(--accent)",
     status: "delivered",
-    visual: "bridal",
+    media: {},
   },
   {
     id: "furniture-product-experience",
@@ -105,7 +111,7 @@ export const projects: Project[] = [
     categories: ["digital", "products"],
     accent: "var(--accent)",
     status: "delivered",
-    visual: "product",
+    media: {},
   },
   {
     id: "school-management-platform",
@@ -128,7 +134,7 @@ export const projects: Project[] = [
     categories: ["systems", "erp", "automation"],
     accent: "var(--accent)",
     status: "delivered",
-    visual: "erp",
+    media: {},
   },
   {
     id: "startup-product-platform",
@@ -148,7 +154,7 @@ export const projects: Project[] = [
     categories: ["products", "systems"],
     accent: "var(--accent)",
     status: "ongoing",
-    visual: "product",
+    media: {},
   },
 ];
 
@@ -180,23 +186,50 @@ export const capabilities: Capability[] = [
       "Digital Showrooms",
       "Digital Catalogues",
       "Landing Experiences",
+      "Responsive Architecture",
+      "Performance Optimization",
+      "SEO",
     ],
     note: "Interfaces built around how a business presents itself and how its customers actually browse.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Motion"],
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "GSAP", "Framer Motion"],
   },
   {
     number: "02",
     title: "Commerce",
-    items: ["E-commerce", "Online Ordering", "Product Discovery", "Customer Journeys"],
+    items: [
+      "E-commerce",
+      "Online Ordering",
+      "Product Discovery",
+      "Customer Journeys",
+      "Digital Catalogues",
+    ],
     note: "Purchase paths designed around catalogue structure, discovery and conversion mechanics.",
-    tech: ["React", "APIs", "PostgreSQL", "Edge Delivery"],
+    tech: ["React", "APIs", "PostgreSQL", "Cloudflare Pages", "Edge Delivery"],
   },
   {
     number: "03",
     title: "Business Systems",
-    items: ["ERP", "Dashboards", "Admin Platforms", "Internal Tools", "Customer Portals"],
+    items: [
+      "ERP Platforms",
+      "Admin Dashboards",
+      "Internal Tools",
+      "Customer & Role-Based Portals",
+      "Authentication & Authorization",
+      "Student / Customer Management",
+      "Attendance & Fee Management",
+      "Reporting, Imports & Audit Systems",
+      "Business Rules, Validation & Workflow State",
+      "Business Intelligence Interfaces",
+    ],
     note: "Operational software that models real workflows, roles, permissions and reporting.",
-    tech: ["Supabase", "PostgreSQL", "Row Level Security", "Auth"],
+    tech: [
+      "Supabase",
+      "PostgreSQL",
+      "Relational Architecture",
+      "PostGIS",
+      "Row Level Security",
+      "Auth",
+    ],
   },
   {
     number: "04",
@@ -207,9 +240,10 @@ export const capabilities: Capability[] = [
       "Notifications",
       "Integrations",
       "Business Operations",
+      "Reporting",
     ],
     note: "Removing manual steps between systems, people and data.",
-    tech: ["Workers", "Webhooks", "Scheduled Jobs", "APIs"],
+    tech: ["Cloudflare Workers", "Webhooks", "Scheduled Jobs", "APIs"],
   },
   {
     number: "05",
@@ -221,14 +255,21 @@ export const capabilities: Capability[] = [
       "Custom AI Solutions",
     ],
     note: "Applied intelligence inside products — placed where it changes the outcome.",
-    tech: ["Model APIs", "Embeddings", "Structured Output", "Evaluation"],
+    tech: ["Model APIs", "Embeddings", "Structured Output", "Evaluation", "Workflow Systems"],
   },
   {
     number: "06",
     title: "Product Engineering",
-    items: ["MVPs", "Startup Platforms", "Custom Applications", "SaaS Products"],
+    items: [
+      "MVPs",
+      "Startup Platforms",
+      "Custom Applications",
+      "SaaS Products",
+      "Interface Design",
+      "Platform Architecture",
+    ],
     note: "From requirement to working product, with architecture decided before the first screen.",
-    tech: ["TypeScript", "Vite", "Postgres", "CI/CD"],
+    tech: ["TypeScript", "Vite", "PostgreSQL", "Git", "GitHub", "CI/CD"],
   },
   {
     number: "07",
@@ -240,64 +281,12 @@ export const capabilities: Capability[] = [
       "Edge Infrastructure",
       "Authentication",
       "Security Architecture",
+      "Documents, Media & Exports",
+      "Data Management",
     ],
     note: "The layer that decides whether a product still holds up a year after launch.",
-    tech: ["Cloudflare", "Workers", "R2", "Pages"],
+    tech: ["Cloudflare", "Workers", "R2", "Pages", "Edge Infrastructure"],
   },
-];
-
-export const techStack = [
-  {
-    group: "Frontend",
-    items: ["React", "TypeScript", "Vite", "Tailwind CSS", "GSAP", "Framer Motion"],
-  },
-  {
-    group: "Backend",
-    items: ["Supabase", "PostgreSQL", "APIs", "Authentication", "Row Level Security"],
-  },
-  { group: "Cloud", items: ["Cloudflare", "Workers", "R2", "Pages", "Edge Infrastructure"] },
-  {
-    group: "Engineering",
-    items: [
-      "Git",
-      "GitHub",
-      "CI/CD",
-      "Responsive Architecture",
-      "Performance Optimization",
-      "SEO",
-    ],
-  },
-  {
-    group: "Data",
-    items: ["PostgreSQL", "Relational Architecture", "PostGIS", "Data Management"],
-  },
-  {
-    group: "Intelligence",
-    items: [
-      "AI Integrations",
-      "Automation",
-      "Workflow Systems",
-      "Intelligent Interfaces",
-    ],
-  },
-];
-
-export const systemCapabilities = [
-  "ERP platforms",
-  "Admin dashboards",
-  "Role-based portals",
-  "Authentication & authorization",
-  "Student / customer management",
-  "Attendance systems",
-  "Fee management",
-  "Workflow management",
-  "Reporting",
-  "Data imports",
-  "Audit systems",
-  "Notifications",
-  "Database architecture",
-  "Cloud storage",
-  "Business intelligence interfaces",
 ];
 
 export const productTypes = [
@@ -320,7 +309,7 @@ export const contact = {
 export const navLinks = [
   { label: "Work", href: "#work" },
   { label: "Capabilities", href: "#capabilities" },
-  { label: "Systems", href: "#systems" },
+  { label: "Design", href: "#design" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];

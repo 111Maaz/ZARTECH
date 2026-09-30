@@ -16,6 +16,10 @@ export function Capabilities() {
           Capabilities
         </p>
         <RevealLines className="zt-display block" lines={["What we build."]} />
+        <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          From interface and business logic to data, storage and infrastructure, every layer is
+          engineered for clarity, reliability and decisions that hold up after launch.
+        </p>
 
         <ul className="mt-16 border-t border-line">
           {capabilities.map((c) => {

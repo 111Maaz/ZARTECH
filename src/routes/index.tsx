@@ -3,10 +3,7 @@ import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { Philosophy } from "@/components/site/Philosophy";
 import { Work } from "@/components/site/Work";
-import { Systems } from "@/components/site/Systems";
-import { ProductEngineering } from "@/components/site/ProductEngineering";
 import { Capabilities } from "@/components/site/Capabilities";
-import { Technology } from "@/components/site/Technology";
 import { Craft } from "@/components/site/Craft";
 import { About } from "@/components/site/About";
 import { FinalCTA } from "@/components/site/FinalCTA";
@@ -75,10 +72,7 @@ function Index() {
         <Hero />
         <Philosophy />
         <Work />
-        <Systems />
-        <ProductEngineering />
         <Capabilities />
-        <Technology />
         <Craft />
         <About />
         <FinalCTA />
